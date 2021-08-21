@@ -1,6 +1,6 @@
 const bodyTag = document.querySelector('html');
 
-function data() {
+function init() {
 	function getThemeFromLocalStorage() {
 		// if user already changed the theme, use it
 		if (window.localStorage.getItem('dark')) {
@@ -73,3 +73,7 @@ function data() {
 		},
 	}
 }
+
+document.addEventListener('alpine:init', () => {
+	Alpine.data('pageInit', init)
+})
